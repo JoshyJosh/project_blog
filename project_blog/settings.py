@@ -127,3 +127,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = '/media/'
+
+STATIC_ROOT = '/root/static/'
+
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
