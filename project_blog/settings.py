@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django_wysiwyg',
     'ckeditor',
     'blog',
+    'bootstrap3',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

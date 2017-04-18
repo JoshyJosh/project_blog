@@ -1,1 +1,44 @@
+{% load staticfiles %}
+
+{% load bootstrap3 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% static "siteparts/header.html" %}
+
+<nav>
+  <a href="#">Guides</a>
+  <a href="#">Projects</a>
+  <a href="#">About</a>
+</nav>
+
 <p>This is the next index page</p>
+
+{% for codepost in codeposts %}
+  <p>{{codepost.title}}</p>
+{% endfor %}
+
+{% if codeposts.has_other_pages %}
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    {% if codepost.has_previous %}
+      <li><a aria-label="Previous" href="?page=({ codeposts.prevous_page_number })">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in codeposts.paginator.page_range %}
+      {% if codeposts.number == i %}
+      <li class="active"><span>{{ i }}<span class="sr-only">(current)</span></span></li>
+      {% else %}
+      <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+      {% if codeposts.has_next %}
+      <li><a aria-label="Next" href="?page={{ codeposts.next_page_number }}">&raquo;</a></li>
+      {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}

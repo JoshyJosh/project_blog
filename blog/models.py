@@ -14,11 +14,11 @@ class PostCategory(models.Model):
 
 
 class CodePost(models.Model):
-    title = models.CharField(max_length=100)
-    content = RichTextField(max_length=4000)
+    title = models.CharField(max_length=100, default="foo")
+    content = RichTextField(max_length=4000, default="bar")
     date = models.DateTimeField(auto_now_add=True)
-    category = models.ManyToManyField(PostCategory)
-    slug = models.SlugField(max_length=255, unique=True)
+    category = models.ManyToManyField(PostCategory, default=None, blank=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
 
     def __str__(self):
         return self.title
