@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from blog.models import PostCategory
 
 import re
 # Create your models here.
@@ -10,6 +11,7 @@ class Project(models.Model):
     description = models.CharField(max_length=4000)
     thumb = models.ImageField()
     slug = models.SlugField(blank=True)
+    category = models.ManyToManyField(PostCategory, default=None, blank=True)
 
     def __str__(self):
         return self.title
