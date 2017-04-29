@@ -1,17 +1,9 @@
-{% load staticfiles %}
+{% extends "base.html" %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
 
-{% load bootstrap3 %}
-
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{% static "siteparts/header.html" %}
-
-<nav>
-  <a href="#">Guides</a>
-  <a href="#">Projects</a>
-  <a href="#">About</a>
-</nav>
+{% block main %}
 
 <p>This is the next index page</p>
 
@@ -42,3 +34,9 @@
   </ul>
 </nav>
 {% endif %}
+
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

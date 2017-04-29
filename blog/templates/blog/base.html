@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+{% block header %}
+{% endblock %}
+
+<body>
+    <div id="navbar">
+      <nav>
+        <a href="#">Guides</a>
+        <a href="#">Projects</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
+
+    <div id="content">
+        {% block main %}{% endblock %}
+    </div>
+
+    {% block footer %}
+    {% endblock %}
+</body>
+</html>
