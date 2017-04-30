@@ -26,7 +26,7 @@ def index(request):
     codepost_list = CodePost.objects.all()
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(codepost_list, 2)
+    paginator = Paginator(codepost_list, 10)
     try:
         codeposts = paginator.page(page)
     except PageNotAnInteger:
