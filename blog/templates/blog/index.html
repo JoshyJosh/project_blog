@@ -2,20 +2,39 @@
 {% block header %}
 {% include 'header.html' %}
 {% endblock %}
+{% block navbar %}
+<div class="btn-group btn-group-justified" id="main-navbar">
+    <a class="btn btn-default active" href="#" role="button">Blog</a>
+    <a class="btn btn-default" href="/projects" role="button">Projects</a>
+    <a class="btn btn-default" href="/about" role="button">About</a>
+</div>
+{% endblock %}
 
 {% block main %}
 
-<p>This is the next index page</p>
+<form id="searchform" action="{% url 'blog:index' %}" method="get" accept-charset="utf-8">
+      <button class="searchbutton" type="submit">
+        Search
+      </button>
+      <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
+</form>
+
+<p>{{ codepostst }}</p>
+
+  {% if specialstyle %}
+    <p>This is the GET index page</p>
+  {% else %}
+    <p>This is the next index page right here</p>
+  {% endif %}
 
 {% for codepost in codeposts %}
   <p>{{codepost.title}}</p>
 {% endfor %}
-
 {% if codeposts.has_other_pages %}
 <nav aria-label="Page navigation">
   <ul class="pagination">
-    {% if codepost.has_previous %}
-      <li><a aria-label="Previous" href="?page=({ codeposts.prevous_page_number })">&laquo;</a></li>
+    {% if codeposts.has_previous %}
+      <li><a aria-label="Previous" href="?page={{ codeposts.previous_page_number }}">&laquo;</a></li>
     {% else %}
       <li class="disabled"><span>&laquo;</span></li>
     {% endif %}

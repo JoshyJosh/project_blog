@@ -5,12 +5,7 @@
 {% endblock %}
 
 <body>
-    <div class="btn-group btn-group-justified" id="main-navbar">
-        <a class="btn btn-default" href="/" role="button">Blog</a>
-        <a class="btn btn-default" href="/projects" role="button">Projects</a>
-        <a class="btn btn-default" href="#" role="button">About</a>
-    </div>
-
+  {% block navbar %}{% endblock %}
     <div id="content">
         {% block main %}{% endblock %}
     </div>

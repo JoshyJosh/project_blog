@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'ckeditor',
     'blog',
     'projects',
+    'aboutpage',
+    #for debugging
+    'pdb',
     'bootstrap3',
     'django.contrib.auth',
     'django.contrib.contenttypes',
