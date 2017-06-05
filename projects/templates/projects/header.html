@@ -1,0 +1,14 @@
+{% block header %}
+<head>
+    <title>{% block title %}The project blog{% endblock %}</title>
+
+    {% load static %}
+
+    {% load bootstrap3 %}
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+</head>
+{% endblock %}

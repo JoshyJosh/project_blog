@@ -22,3 +22,4 @@ class CodePostAdmin(admin.ModelAdmin):
 admin.site.register(CodePost, CodePostAdmin) """
 
 admin.site.register(CodePost)
+admin.site.register(PostCategory)

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+{% block header %}
+{% endblock %}
+
+<body>
+  {% block navbar %}{% endblock %}
+    <div id="content">
+        {% block main %}{% endblock %}
+    </div>
+
+    {% block footer %}
+    {% endblock %}
+</body>
+</html>
