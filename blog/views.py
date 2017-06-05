@@ -69,7 +69,13 @@ class IndexView(generic.list.ListView):
         context["results"] = self.get_queryset()
         context["codeposts"] = context["results"]
         codeposts = context["codeposts"]
+
+        context["query"] = self.request.GET.get('q')
+
         #pdb.set_trace()
+        page = self.request.GET.get('page')
+        if not page:
+            page = 1
 
         paginator = Paginator(codeposts, 2)
         try:
