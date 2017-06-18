@@ -12,6 +12,7 @@ class Project(models.Model):
     thumb = models.ImageField()
     slug = models.SlugField(blank=True)
     category = models.ManyToManyField(PostCategory, default=None, blank=True)
+    proj_link = models.CharField(max_length=800, default=None, blank=True)
 
     def __str__(self):
         return self.title

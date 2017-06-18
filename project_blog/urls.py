@@ -18,8 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('blog.urls')),
-    url(r'^about', include('aboutpage.urls')),
-    url(r'^projects', include('projects.urls')),
+    url(r'^about/', include('aboutpage.urls')),
+    url(r'^projects/', include('projects.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^admin/', admin.site.urls),
 ]

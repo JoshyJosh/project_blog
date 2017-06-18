@@ -106,7 +106,7 @@ class IndexView(generic.list.ListView):
 
 class BlogDetailView(generic.detail.DetailView):
     model = CodePost
-    template_name = "blog/details.html"
+    template_name = "blog/detail.html"
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)

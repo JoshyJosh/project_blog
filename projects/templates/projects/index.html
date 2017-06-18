@@ -12,6 +12,9 @@
 {% endblock %}
 {% block main %}
  <p>This is the projects index page</p>
+{% for project in projects %}
+<p><a href="projects/{{project.slug}}">{{project.title}}</a></p>
+{% endfor %}
 {% endblock %}
 {% block footer %}
 {% include "footer.html" %}
