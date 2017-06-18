@@ -77,7 +77,7 @@ class IndexView(generic.list.ListView):
         if not page:
             page = 1
 
-        paginator = Paginator(codeposts, 2)
+        paginator = Paginator(codeposts, 5)
         try:
             codeposts = paginator.page(page)
         except PageNotAnInteger:
@@ -102,3 +102,13 @@ class IndexView(generic.list.ListView):
         self.codeposts = paginator.page(paginator.num_pages)
 """
     #return render(request, 'blog/index.html', {'codeposts': codeposts, 'specialstyle': specialstyle})
+
+
+class BlogDetailView(generic.detail.DetailView):
+    model = CodePost
+    template_name = "blog/details.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
+        context['now'] = "Right now this is the \"now\" variable"
+        return context

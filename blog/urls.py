@@ -6,5 +6,5 @@ app_name = "blog"
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name="index"),
-    # url(r'post/(?P<contentpost_slug>)^$', views.DetailView.as_view(), name="detail"),
+    url(r'^blog/(?P<slug>[-_\w]+)/$', views.BlogDetailView.as_view(), name="details"),
 ]
