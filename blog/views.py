@@ -86,6 +86,7 @@ class IndexView(generic.list.ListView):
             codeposts = paginator.page(paginator.num_pages)
 
         context["codeposts"] = codeposts
+        context["title"] = "Blog post page"
         print("Got here aswell!")
         print(str(context["results"]))
         return context
@@ -111,4 +112,5 @@ class BlogDetailView(generic.detail.DetailView):
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
         context['now'] = "Right now this is the \"now\" variable"
+        context['title'] = context['object'].title
         return context

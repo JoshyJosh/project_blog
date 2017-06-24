@@ -26,7 +26,7 @@
   {% endif %}
 
 {% for codepost in codeposts %}
-  <p><a href="blog/{{codepost.slug}}">{{codepost.title}}</a></p>
+  <p class="{% cycle 'odd' 'even' %}"><a href="blog/{{codepost.slug}}">{{codepost.title}}</a></p>
 {% endfor %}
 {% if codeposts.has_other_pages %}
 <nav aria-label="Page navigation">

@@ -1,6 +1,6 @@
 {% block header %}
 <head>
-    <title>{% block title %}The project blog{% endblock %}</title>
+    <title>The project blog {% if title %} - {{ title }}{% endif %}</title>
 
     {% load static %}
 

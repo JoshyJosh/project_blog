@@ -71,6 +71,8 @@ class IndexView(generic.list.ListView):
             projects = paginator.page(paginator.num_pages)
 
         context["projects"] = projects
+
+        context["title"] = "Projects page"
         print("Got here aswell!")
         print(str(context["results"]))
         return context
@@ -81,5 +83,5 @@ class ProjectDetailView(generic.detail.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ProjectDetailView, self).get_context_data(**kwargs)
-        context['foo'] = "Testing 1,2,3..."
+        context['title'] = context['object'].title
         return context
