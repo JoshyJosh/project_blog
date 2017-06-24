@@ -1,2 +1,23 @@
+{% extends "base.html" %}
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block navbar %}
+<div class="btn-group btn-group-justified" id="main-navbar">
+    <a class="btn btn-default" href="/" role="button">Blog</a>
+    <a class="btn btn-default active" href="/projects" role="button">Projects</a>
+    <a class="btn btn-default" href="/about" role="button">About</a>
+</div>
+{% endblock %}
+
+{% block main %}
+
 <p>{{foo}}</p>
 <p>{{object.title}}</p>
+<p>{{object.description}}</p>
+
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
