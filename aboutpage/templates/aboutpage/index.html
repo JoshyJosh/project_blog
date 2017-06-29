@@ -3,11 +3,21 @@
 {% include 'header.html' %}
 {% endblock %}
 {% block navbar %}
-<div class="btn-group btn-group-justified" id="main-navbar">
+<!-- <div class="btn-group btn-group-justified" id="main-navbar">
     <a class="btn btn-default" href="/" role="button">Blog</a>
-    <a class="btn btn-default" href="/projects" role="button">Projects</a>
-    <a class="btn btn-default active" href="#" role="button">About</a>
-</div>
+    <a class="btn btn-default active" href="#" role="button">Projects</a>
+    <a class="btn btn-default" href="/about" role="button">About</a>
+</div>-->
+<header>
+  <h1>{{title}}</h1>
+  <nav id="code-navbar">
+      <ul>
+        <li><a class="" href="/" role="button">BLOG</a></li>
+        <li><a  href="#" role="button">PROJECTS</a></li>
+        <li><a class="active" href="/about" role="button">ABOUT</a></li>
+      </ul>
+  </nav>
+</header>
 {% endblock %}
 
 {% block main %}

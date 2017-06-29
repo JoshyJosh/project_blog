@@ -73,6 +73,9 @@ class IndexView(generic.list.ListView):
         context["projects"] = projects
 
         context["title"] = "Projects page"
+
+        context["css_extra"] = ['css/project_style.css']
+
         print("Got here aswell!")
         print(str(context["results"]))
         return context

@@ -3,11 +3,21 @@
 {% include 'header.html' %}
 {% endblock %}
 {% block navbar %}
-<div class="btn-group btn-group-justified" id="main-navbar">
-    <a class="btn btn-default active" href="#" role="button">Blog</a>
-    <a class="btn btn-default" href="/projects" role="button">Projects</a>
+<!-- <div class="btn-group btn-group-justified" id="main-navbar">
+    <a class="btn btn-default" href="/" role="button">Blog</a>
+    <a class="btn btn-default active" href="#" role="button">Projects</a>
     <a class="btn btn-default" href="/about" role="button">About</a>
-</div>
+</div>-->
+<header>
+  <h1>{{title}}</h1>
+  <nav id="code-navbar">
+      <ul>
+        <li><a class="active" href="/" role="button">BLOG</a></li>
+        <li><a class="" href="#" role="button">PROJECTS</a></li>
+        <li><a class="" href="/about" role="button">ABOUT</a></li>
+      </ul>
+  </nav>
+</header>
 {% endblock %}
 
 {% block main %}
@@ -19,10 +29,8 @@
       <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
 </form>
 
-  {% if specialstyle %}
-    <p>This is the GET index page</p>
-  {% else %}
-    <p>This is the next index page right here</p>
+  {% if query %}
+    <p>You searched for: {{query}}</p>
   {% endif %}
 
 {% for codepost in codeposts %}

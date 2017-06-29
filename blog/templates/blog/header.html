@@ -2,13 +2,25 @@
 <head>
     <title>The project blog {% if title %} - {{ title }}{% endif %}</title>
 
-    {% load static %}
-
     {% load bootstrap3 %}
 
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 
-    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+
+    {% load staticfiles %}
+
+    {% if css_extra %}
+      {% for extra in css_extra %}
+        <link rel="stylesheet" href="{% static extra %}"/>
+      {% endfor %}
+    {% endif %}
+  <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+  <link rel="stylesheet" href="{% static "fonts/fontello/css/animation.css" %}"/>
+  <link rel="stylesheet" href="{% static "fonts/fontello/css/fontello.css" %}"/>
+  <link rel="stylesheet" href="{% static "fonts/fontello/css/fontello-codes.css" %}"/>
+  <link rel="stylesheet" href="{% static "fonts/fontello/css/fontello-embedded.css" %}"/>
+  <link rel="stylesheet" href="{% static "fonts/fontello/css/fontello-ie7.css" %}"/>
+  <link rel="stylesheet" href="{% static "fonts/fontello/css/fontello-ie7.css" %}"/>
 </head>
 {% endblock %}

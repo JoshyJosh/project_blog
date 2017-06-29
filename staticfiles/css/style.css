@@ -1,4 +1,66 @@
-body, html {
+@font-face{
+  font-family: 'Inconsolata';
+  src:url(../fonts/inconsolata/Inconsolata.otf);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 60px;
+}
+
+footer > p {
+  display: table;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+header {
+  padding:20px;
+  background-color: #ffffff;
+}
+
+h1{
+  margin: 0px;
+}
+
+nav li a{
+  padding: 25px;
+}
+a{
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+nav li:hover, nav a:hover{
+  background-color: #dddddd;
+}
+
+*{
+  font-family: 'Inconsolata';
+}
+
+body{
+  /*background-color: #ddddff;*/
+}
+
+h1{
+  display: inline-block;
+}
+
+#code-navbar {
+  font-family: 'Inconsolata', Monaco, Consolas, 'Courier New', Courier;
+  float:right;
+}
+
+#code-navbar p, #code-navbar li, #code-navbar p, #code-navbar ul{
+  display: inline-block;
+}
+
+#code-navbar ul{
+  padding:0;
 }
