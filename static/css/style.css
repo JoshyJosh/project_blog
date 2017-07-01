@@ -83,6 +83,14 @@ a.icon-github-circled-1::before {
   margin: 0;
 }
 
+form#searchform > button.searchbutton > i.icon-github-circled-1{
+  visibility: visible;
+}
+
+form#searchform > button.searchbutton{
+  visibility: hidden;
+}
+
 footer, header {
   background-color: #cccccc;
 }

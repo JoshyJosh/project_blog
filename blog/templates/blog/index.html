@@ -12,9 +12,9 @@
   <h1>{{title}}</h1>
   <nav id="code-navbar">
       <ul>
-        <li><a class="active" href="/" role="button">BLOG</a></li>
-        <li><a class="" href="#" role="button">PROJECTS</a></li>
-        <li><a class="" href="/about" role="button">ABOUT</a></li>
+        <li><a class="active" href="#" role="button">BLOG</a></li>
+        <li><a class="" href="{% url 'projects:index' %}" role="button">PROJECTS</a></li>
+        <li><a class="" href="{% url 'aboutpage:index' %}" role="button">ABOUT</a></li>
       </ul>
   </nav>
 </header>
@@ -22,11 +22,8 @@
 
 {% block main %}
 
-<form id="searchform" action="{% url 'blog:index' %}" method="get" accept-charset="utf-8">
-      <button class="searchbutton" type="submit">
-        Search
-      </button>
-      <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
+<form id="searchform" class="input-group" action="{% url 'blog:index' %}" method="get" accept-charset="utf-8">
+  <input class="searchfield from-control" id="searchbox" name="q" type="text" placeholder="Search">
 </form>
 
   {% if query %}

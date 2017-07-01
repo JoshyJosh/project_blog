@@ -12,9 +12,9 @@
   <h1>{{title}}</h1>
   <nav id="code-navbar">
       <ul>
-        <li><a class="" href="/" role="button">BLOG</a></li>
-        <li><a  href="#" role="button">PROJECTS</a></li>
-        <li><a class="active" href="/about" role="button">ABOUT</a></li>
+        <li><a class="" href="{% url 'blog:index' %}" role="button">BLOG</a></li>
+        <li><a  href="{% url 'projects:index' %}" role="button">PROJECTS</a></li>
+        <li><a class="active" href="#" role="button">ABOUT</a></li>
       </ul>
   </nav>
 </header>
@@ -22,6 +22,9 @@
 
 {% block main %}
 <p>This is the about page</p>
+<h2>{{ object.title }}</h2>
+<p>{{ object.content }}</p>
+
 {% endblock %}
 
 {% block footer %}

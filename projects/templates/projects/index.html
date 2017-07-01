@@ -13,14 +13,22 @@
   <h1>{{title}}</h1>
   <nav id="code-navbar">
       <ul>
-        <li><a class="" href="/" role="button">BLOG</a></li>
+        <li><a class="" href="{% url 'blog:index' %}" role="button">BLOG</a></li>
         <li><a class="active" href="#" role="button">PROJECTS</a></li>
-        <li><a class="" href="/about" role="button">ABOUT</a></li>
+        <li><a class="" href="{% url 'aboutpage:index' %}" role="button">ABOUT</a></li>
       </ul>
   </nav>
 </header>
 {% endblock %}
 {% block main %}
+
+<form id="searchform" class="input-group" action="{% url 'projects:index' %}" method="get" accept-charset="utf-8">
+  <input class="searchfield from-control" id="searchbox" name="q" type="text" placeholder="Search">
+</form>
+
+{% if query %}
+  <p>You searched for: {{query}}</p>
+{% endif %}
  <p>This is the projects index page</p>
 {% for project in projects %}
 <p class="{% cycle 'odd' 'even' %}"><a href="projects/{{project.slug}}">{{project.title}}</a></p>

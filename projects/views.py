@@ -29,19 +29,19 @@ class IndexView(generic.list.ListView):
             title = Project.objects.filter(title__icontains=query_list[0]).order_by('title');
             print("query: " + query_list[0])
             print("title: " + str(title))
-            content = Project.objects.filter(content__icontains=query_list[0])
-            print("content: " + str(content))
-            content1 = Project.objects.filter()
-            print("content1: " + str(content1))
+            description = Project.objects.filter(description__icontains=query_list[0])
+            print("description: " + str(description))
+            description1 = Project.objects.filter()
+            print("description1: " + str(description1))
             print(str(result))
-            #result = list(chain(title, content))
+            #result = list(chain(title, description))
 
             #pdb.set_trace()
             print("Title: " + str(title))
-            print("Content: " + str(content))
+            print("Content: " + str(description))
             print("Got here!")
             print(result)
-            result = title | content
+            result = title | description
             print("Result: " + str(result))
             print("Query: " + str(query_list[0]))
             return result
