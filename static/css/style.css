@@ -102,6 +102,6 @@ footer, header {
 
 #content {
   min-height: 875px;
-    margin: 10px auto;
+    margin: 10px;
     box-sizing: border-box;
 }

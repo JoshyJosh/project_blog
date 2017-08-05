@@ -33,6 +33,9 @@
 {% for codepost in codeposts %}
   <p class="{% cycle 'odd' 'even' %}"><a href="blog/{{codepost.slug}}">{{codepost.title}}</a></p>
   <p><img style="width:200px;height:200px" src="/static/media/{{codepost.thumb}}"/></p>
+  {% autoescape off %}
+  {{codepost.teaser|truncatechars_html:20}}
+  {% endautoescape %}
 {% endfor %}
 </div>
 {% if codeposts.has_other_pages %}

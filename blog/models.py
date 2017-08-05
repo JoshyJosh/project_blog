@@ -24,6 +24,9 @@ class CodePost(models.Model):
     def __str__(self):
         return self.title
 
+    def teaser(self):
+        return self.content
+
     def save(self, *args, **kwargs):
         super(CodePost, self).save(*args, **kwargs)
         if not self.slug:
