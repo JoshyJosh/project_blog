@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from blog.models import PostCategory
+import os
 
 import re
 # Create your models here.
@@ -9,7 +10,7 @@ import re
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=4000)
-    thumb = models.ImageField()
+    thumb = models.ImageField(default="/static/defaults/thumb_default.jpg")
     slug = models.SlugField(blank=True)
     category = models.ManyToManyField(PostCategory, default=None, blank=True)
     proj_link = models.CharField(max_length=800, default=None, blank=True)

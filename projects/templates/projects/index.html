@@ -32,6 +32,7 @@
  <p>This is the projects index page</p>
 {% for project in projects %}
 <p class="{% cycle 'odd' 'even' %}"><a href="projects/{{project.slug}}">{{project.title}}</a></p>
+<p><img style="width:200px;height:200px" src="/static/media/{{project.thumb}}"</p>
 {% endfor %}
 {% endblock %}
 {% block footer %}

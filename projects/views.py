@@ -13,6 +13,7 @@ def index(request):
     return render(request, 'projects/index.html')
 """
 
+
 class IndexView(generic.list.ListView):
     template_name = 'projects/index.html'
     content_object_name = "projects"
@@ -79,6 +80,7 @@ class IndexView(generic.list.ListView):
         print("Got here aswell!")
         print(str(context["results"]))
         return context
+
 
 class ProjectDetailView(generic.detail.DetailView):
     model = Project

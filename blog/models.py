@@ -19,6 +19,7 @@ class CodePost(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(PostCategory, default=None, blank=True)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
+    thumb = models.ImageField(default="/static/media/thumb_default.jpg")
 
     def __str__(self):
         return self.title

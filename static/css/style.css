@@ -4,8 +4,6 @@
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
@@ -48,8 +46,15 @@ nav li:hover, nav a:hover{
   font-family: 'Inconsolata', Monaco, Consolas, 'Courier New', Courier;
 }
 
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
 body{
   /*background-color: #ddddff;*/
+  position: relative;
+  height: 100%;
 }
 
 h1{
@@ -93,4 +98,10 @@ form#searchform > button.searchbutton{
 
 footer, header {
   background-color: #cccccc;
+}
+
+#content {
+  min-height: 875px;
+    margin: 10px auto;
+    box-sizing: border-box;
 }
