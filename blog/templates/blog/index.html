@@ -10,6 +10,11 @@
 </div>-->
 <header>
   <h1>{{title}}</h1>
+  <div id="menu">
+  <i class="icon-search"></i>
+  <form id="searchform" class="input-group" action="{% url 'blog:index' %}" method="get" accept-charset="utf-8">
+    <input class="searchfield from-control" id="searchbox" name="q" type="text" placeholder="Search">
+  </form>
   <nav id="code-navbar">
       <ul>
         <li><a class="active" href="#" role="button">BLOG</a></li>
@@ -17,25 +22,30 @@
         <li><a class="" href="{% url 'aboutpage:index' %}" role="button">ABOUT</a></li>
       </ul>
   </nav>
+</div>
 </header>
+
 {% endblock %}
 
 {% block main %}
 
-<form id="searchform" class="input-group" action="{% url 'blog:index' %}" method="get" accept-charset="utf-8">
-  <input class="searchfield from-control" id="searchbox" name="q" type="text" placeholder="Search">
-</form>
-
   {% if query %}
     <p>You searched for: {{query}}</p>
+    <hr>
   {% endif %}
 <div id="codelist">
 {% for codepost in codeposts %}
-  <p class="{% cycle 'odd' 'even' %}"><a href="blog/{{codepost.slug}}">{{codepost.title}}</a></p>
-  <p><img style="width:200px;height:200px" src="/static/media/{{codepost.thumb}}"/></p>
+<div class="postblock {% cycle 'odd' 'even' %}">
+  <img src="/static/media/{{codepost.thumb}}"/>
+  <div class="projdesc">
+  <h3><a href="blog/{{codepost.slug}}">{{codepost.title}}</a></h3>
+  <div class="descwrapper">
   {% autoescape off %}
   {{codepost.teaser|truncatechars_html:20}}
   {% endautoescape %}
+</div>
+  </div>
+</div>
 {% endfor %}
 </div>
 {% if codeposts.has_other_pages %}

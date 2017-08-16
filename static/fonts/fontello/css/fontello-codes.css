@@ -2,6 +2,9 @@
 .icon-github-1:before { content: '\e800'; } /* '' */
 .icon-github-circled-1:before { content: '\e801'; } /* '' */
 .icon-linkedin-2:before { content: '\e802'; } /* '' */
+.icon-search:before { content: '\e803'; } /* '' */
+.icon-spin1:before { content: '\e830'; } /* '' */
+.icon-spin2:before { content: '\e831'; } /* '' */
 .icon-github-circled-alt:before { content: '\f053'; } /* '' */
 .icon-github-circled-alt2:before { content: '\f056'; } /* '' */
 .icon-linkedin:before { content: '\f05c'; } /* '' */
@@ -9,3 +12,4 @@
 .icon-github-circled:before { content: '\f301'; } /* '' */
 .icon-linkedin-1:before { content: '\f318'; } /* '' */
 .icon-linkedin-circled:before { content: '\f319'; } /* '' */
+.icon-search-1:before { content: '\f50d'; } /* '' */

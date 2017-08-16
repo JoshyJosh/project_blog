@@ -88,6 +88,10 @@ a.icon-github-circled-1::before {
   margin: 0;
 }
 
+form#searchform {
+  margin: 1em;
+}
+
 form#searchform > button.searchbutton > i.icon-github-circled-1{
   visibility: visible;
 }
@@ -104,4 +108,54 @@ footer, header {
   min-height: 875px;
     margin: 10px;
     box-sizing: border-box;
+}
+
+.postblock {
+  padding: 0.5em;
+  border-radius: 3px;
+  margin: 0.5em;
+}
+
+.postblock.odd {
+  background: #d8d8d8;
+}
+
+.postblock.even {
+  background: #a7a7a7;
+}
+
+.postblock .projdesc {
+  display: inline-block;
+  position: absolute;
+  width: 80%;
+  margin:0.5em;
+}
+
+.postblock img {
+  display: inline-block;
+  margin:0.5em;
+  width: 250px;
+  height:250px;
+}
+
+.postblock h3 {
+  padding: 0.5em;
+  font-weight: 900;
+}
+
+.postblock .descwrapper {
+  padding: 1em;
+  background-color: #e9e9e9;
+}
+
+#menu i, #menu form {
+  display: inline;
+}
+
+#category-list {
+
+}
+
+#category-list li {
+  list-style: none;
 }
