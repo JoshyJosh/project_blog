@@ -7,12 +7,19 @@ import re
 # Create your models here.
 
 
+class ProjectCategory(models.Model):
+    category = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.category
+
+
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=4000)
-    thumb = models.ImageField(default="/static/defaults/thumb_default.jpg")
+    thumb = models.ImageField(default="/static/media/thumb_default.jpg")
     slug = models.SlugField(blank=True)
-    category = models.ManyToManyField(PostCategory, default=None, blank=True)
+    category = models.ManyToManyField(ProjectCategory, default=None, blank=True)
     proj_link = models.CharField(max_length=800, default=None, blank=True)
 
     def __str__(self):
