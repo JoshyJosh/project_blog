@@ -19,7 +19,7 @@ class ProjectCategory(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=4000)
-    thumb = FilerImageField(related_name="project_thumbs")
+    thumb = FilerImageField(related_name="project_thumbs", null=True, blank=True)
     slug = models.SlugField(blank=True)
     category = models.ManyToManyField(ProjectCategory, default=None, blank=True)
     proj_link = models.CharField(max_length=800, default=None, blank=True)

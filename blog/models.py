@@ -2,6 +2,8 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
 
+from filer.fields.image import FilerImageField
+
 import re
 # Create your models here.
 
@@ -19,7 +21,7 @@ class CodePost(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(PostCategory, default=None, blank=True)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
-    thumb = models.ImageField(default="/static/media/thumb_default.jpg")
+    thumb = FilerImageField(related_name="blog_thumbs", null=True, blank=True)
 
     def __str__(self):
         return self.title

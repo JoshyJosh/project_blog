@@ -36,7 +36,7 @@
 <div id="codelist">
 {% for codepost in codeposts %}
 <div class="postblock {% cycle 'odd' 'even' %}">
-  <img src="/static/media/{{codepost.thumb}}"/>
+  <img src="{{codepost.thumb.url}}"/>
   <div class="projdesc">
   <h3><a href="blog/{{codepost.slug}}">{{codepost.title}}</a></h3>
   <div class="descwrapper">
@@ -48,6 +48,8 @@
 </div>
 {% endfor %}
 </div>
+
+{# navbar #}
 {% if codeposts.has_other_pages %}
 <nav aria-label="Page navigation">
   <ul class="pagination">

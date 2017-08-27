@@ -33,7 +33,7 @@
  <p>This is the projects index page</p>
 {% for project in projects %}
 <div class="postblock {% cycle 'odd' 'even' %}">
-  <img style="width:200px;height:200px" src="/static/media/{{project.thumb}}">
+  <img style="width:200px;height:200px" src="{{project.thumb.url}}">
 <h3><a href="projects/{{project.slug}}">{{project.title}}</a></h3>
 <p>{{project.description}}</p>
 {% if project.category %}
@@ -47,6 +47,32 @@
 {% endif %}
 </div>
 {% endfor %}
+
+{# navbar #}
+{% if projects.has_other_pages %}
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    {% if projects.has_previous %}
+      <li><a aria-label="Previous" href="?page={{ projects.previous_page_number }}{% if query %}+{{query}}{% endif %}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in projects.paginator.page_range %}
+      {% if projects.number == i %}
+      <li class="active"><span>{{ i }}<span class="sr-only">(current)</span></span></li>
+      {% else %}
+      <li><a href="?page={{ i }}{% if query %}&q={{ query}}{% endif %}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+      {% if projects.has_next %}
+      <li><a aria-label="Next" href="?page={{ projects.next_page_number }}{% if query %}+{{query}}{% endif %}">&raquo;</a></li>
+      {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+
 {% endblock %}
 {% block footer %}
 {% include "footer.html" %}
