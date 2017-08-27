@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
 from blog.models import PostCategory
+
+from filer.fields.image import FilerImageField
 import os
 
 import re
@@ -17,7 +19,7 @@ class ProjectCategory(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=4000)
-    thumb = models.ImageField(default="/static/media/thumb_default.jpg")
+    thumb = FilerImageField(related_name="project_thumbs")
     slug = models.SlugField(blank=True)
     category = models.ManyToManyField(ProjectCategory, default=None, blank=True)
     proj_link = models.CharField(max_length=800, default=None, blank=True)

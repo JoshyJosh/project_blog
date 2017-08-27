@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'aboutpage',
     #for debugging
     'pdb',
+    'easy_thumbnails',
+    'filer',
+    'mptt',
     'bootstrap3',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -157,3 +160,11 @@ DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 CKEDITOR_UPLOAD_PATH = "ckuploads/"
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
