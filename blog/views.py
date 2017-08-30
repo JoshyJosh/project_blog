@@ -65,6 +65,9 @@ class IndexView(generic.list.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
+
+        context["pagetype"] = "blogpage"
+        
         context["codeposts"] = CodePost.objects.all()
         context["results"] = self.get_queryset()
         context["codeposts"] = context["results"]

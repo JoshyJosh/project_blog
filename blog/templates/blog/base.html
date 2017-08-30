@@ -4,7 +4,8 @@
 {% block header %}
 {% endblock %}
 
-<body>
+<body id="{% if pagetype %}{{pagetype}}{% endif %}">
+
   {% block navbar %}{% endblock %}
     <div id="content">
         {% block main %}{% endblock %}
