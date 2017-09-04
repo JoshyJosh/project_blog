@@ -20,8 +20,7 @@ PROJECT_ROOT = BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'o0b+9$7rz%m-3b=)o&t!zdbu)z$3yupfs9)z((g0l=xzd62-*b'
-
+SECRET_KEY =  #insert secret key here
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -86,26 +85,8 @@ WSGI_APPLICATION = 'project_blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 # for postgres
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'project_blog_db',
-        'USER': 'django_usr',
-        'PASSWORD': 'foobar',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
-"""
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+# Insert DB settings here
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
